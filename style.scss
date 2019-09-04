@@ -1,0 +1,170 @@
+/*
+Theme Name: brLab test
+
+Description: test
+Author: GRL
+Version: 1.0
+*/
+
+$grey : #61574c;
+$orange : #dca220;
+body{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.wrapper{
+  flex: 1;
+}
+footer{
+  height: 150px;
+  background-color: $grey;
+  .container{
+    margin-top: 30px;
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+  }
+}
+h4{
+  margin: 0 15px;
+  margin-top: 15px;
+  color: #61574c;
+}
+header{
+  background-color: $orange;
+  height: 70px;
+  .container{height: 100%; display: flex; align-items: center; justify-content: space-between;}
+}
+button, input[type=submit], .button{
+  background-color: $grey;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  height: 40px!important;
+  padding: 0 30px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+    background-color: #4b3825;
+  }
+  &.disabled{
+    pointer-events: none;
+    background-color: #a59b90;
+    border-color: #a59b90;
+  }
+}
+
+
+
+
+
+article{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  .box{
+    border: 1px solid $grey;
+    border-radius: 3px;
+    padding: 15px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    color: #61574c;
+    text-decoration: none;
+    justify-content: space-between;
+    &:hover .button{
+      background-color: #4b3825;
+    }
+  }
+  .status, .author, .type{
+    margin-right: 15px;
+  }
+  span{
+    display: block;
+    height: 3px;
+    width: 100px;
+    max-width: 40%;
+    background-color: $orange;
+    margin-top: 7.5px;
+  }
+}
+.logo{
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 2px 2px 1px $grey;
+}
+.sidebar{
+  width: 400px;
+  .box{
+    border-radius: 3px;
+    color: $grey;
+    padding: 7.5px 15px;
+  }
+}
+nav{
+  a{
+    color: #fff;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+    &:hover{
+      text-decoration: none;
+      color: $grey;
+    }
+  }
+}
+input, select, textarea{
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid $grey;
+  margin: 7.5px 0;
+  height: 35px;
+  padding: 0 15px;
+  transition: 0.3s;
+  &:focus {
+    outline:none;
+  }
+  &.error{
+    border: 2px solid #ff4700;
+  }
+}
+textarea{
+  min-height: 100px;
+}
+input[type='range'] {
+  width: 150px;
+  height: 20px;
+  -webkit-appearance: none;
+  border: 1px solid #61574c;
+  border-radius: 3px;
+  padding: 0;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  height: 40px;
+  -webkit-appearance: none;
+  color: #13bba4;
+  margin-top: -1px;
+}
+input[type='range']::-webkit-slider-thumb {
+  width: 20px;
+  -webkit-appearance: none;
+  height: 40px;
+  cursor: ew-resize;
+  background: $orange;
+  border-radius: 3px;
+}
+
+label{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
