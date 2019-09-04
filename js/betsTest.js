@@ -98,6 +98,7 @@ $(document).ready(function(){
                 console.log( 'Error: ', err );
             });
     },
+
     initClick = () => {
         $(document).on('click', '#createBet', createBet);
         $(document).on('click', '#addBet', addBet);
