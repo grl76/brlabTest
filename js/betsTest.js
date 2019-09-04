@@ -58,6 +58,7 @@ $(document).ready(function(){
                             postText +='</div>';
                             postText +='</a></article>';
                             $(".listBet h4").after(postText);
+
                         });
                     })
                     .catch(function(err) {
@@ -101,6 +102,5 @@ $(document).ready(function(){
         $(document).on('click', '#createBet', createBet);
         $(document).on('click', '#addBet', addBet);
     }
-
     initClick();
 });
