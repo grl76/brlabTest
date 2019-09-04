@@ -16,7 +16,7 @@ if($_GET['user'] == 'me'){
                 get_sidebar();
             }
             ?>
-            <div class="w-100 d-flex flex-wrap">
+            <div class="listBet w-100 d-flex flex-wrap">
                 <h4><?= $titlePage ?></h4>
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -62,6 +62,8 @@ if($_GET['user'] == 'me'){
             </a>
         </article>
 <?php endwhile; ?>
+<?php else: ?>
+Ставок не найдено
 <?php endif; ?>
         </div>
 </div>
