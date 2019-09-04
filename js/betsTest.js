@@ -58,9 +58,6 @@ $(document).ready(function(){
                             postText +='</div>';
                             postText +='</a></article>';
                             $(".listBet h4").after(postText);
-
-                            console.log( posts );
-
                         });
                     })
                     .catch(function(err) {
