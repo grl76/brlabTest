@@ -42,10 +42,26 @@ $(document).ready(function(){
                         $("#betContent").val('');
                         $(this).removeClass('disabled');
 
-                        if ( response.status !== 200 ) {
+                        if ( response.status !== 200 && response.status !== 201 ) {
                             throw new Error( 'Problem! Status Code: ' + response.status );
                         }
-                        response.json().then( posts => { console.log( posts ); });
+                        response.json().then( posts => {
+                            let
+                                postText = '<article class="col-12"><a class="box" href="'+posts.guid.rendered+'">';
+                            postText +='<h3>'+betName+'<span></span></h3>';
+                            postText +='<div class="description">'+betContent+'</div>';
+                            postText +='<div class="d-flex justify-content-between">';
+                            postText +='<div class="d-flex align-items-center">';
+                            postText +='<div class="status">Активная</div>';
+                            postText +='</div>';
+                            postText +='<div class="button">Перейти ></div>';
+                            postText +='</div>';
+                            postText +='</a></article>';
+                            $(".listBet h4").after(postText);
+
+                            console.log( posts );
+
+                        });
                     })
                     .catch(function(err) {
                         console.log( 'Error: ', err );
@@ -83,45 +99,6 @@ $(document).ready(function(){
             .catch(function(err) {
                 console.log( 'Error: ', err );
             });
-
-        /*
-            if(betName){
-                let data = {
-                    'title'     : betName,
-                    'typeBet'   : termId,
-                    'statusBet' : REST_API_data.statusTerm,
-                    'meta'      : betMeta,
-                    'status'    : 'publish'
-                };
-                fetch(
-                    REST_API_data.root + 'wp/v2/bets',
-                    {
-                        method: 'POST',
-                        headers: {
-                            'X-WP-Nonce': REST_API_data.nonce,
-                            'Content-Type': 'application/json;charset=utf-8'
-                        },
-                        body: JSON.stringify(data)
-                    }
-                )
-                    .then( response => {
-                        $("#betName").val('') ;
-                        $("#betContent").val('');
-                        $(this).removeClass('disabled');
-
-                        if ( response.status !== 200 ) {
-                            throw new Error( 'Problem! Status Code: ' + response.status );
-                        }
-                        response.json().then( posts => { console.log( posts ); });
-                    })
-                    .catch(function(err) {
-                        console.log( 'Error: ', err );
-                    });
-            } else {
-                console.log('gg');
-                $(this).removeClass('disabled');
-            }
-*/
     },
     initClick = () => {
         $(document).on('click', '#createBet', createBet);
